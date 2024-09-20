@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
 import './Writemsg.css';
-import Publish from '../../components/publishbtn/Publish';
-import Allpostbtn from '../../components/postsbtn/Postsbtn';
 import { useNavigate } from 'react-router-dom';
+import NavBarTwo from '../../components/navbartwo/NavBarTwo'
 
 
 function Writemsg() {
@@ -12,12 +11,9 @@ function Writemsg() {
   const [alias, setAlias] = useState('');     // State för användarnamn
   const [message, setMessage] = useState(''); // State för fel-/framgångsmeddelande
 
-  const handleAllPostsClick = () => {
-    navigate('/Flow');
-  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Förhindrar sidladdning
+    e.preventDefault();
 
     const newPost = {
       inlagg: content,
@@ -55,10 +51,7 @@ function Writemsg() {
       </form>
       {/* Meddelande efter POST-anrop */}
       {message && <p>{message}</p>}
-      <footer className='postbutton-container'>
-        <Publish onClick={handleSubmit} type='submit' />
-        <Allpostbtn  onClick={handleAllPostsClick}/>
-      </footer>
+      <NavBarTwo />
     </section>
   );
 }

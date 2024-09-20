@@ -6,10 +6,13 @@ import "./App.css";
 function App() {
   return (
     <Router>
+      <div className='app'>
       <Routes>
-      <Route path="/" element={<Writemsg />} />
+        <Route path="/" element={<Flow />} />
         <Route path="/Flow" element={<Flow />} />
+        <Route path="/Writemsg" element={<Writemsg />} />
       </Routes>
+      </div>
     </Router>
   );
 }

@@ -45,9 +45,3 @@
     font-weight: bold;
     color: #010101;
 }
-
-
-.postbutton-container {
-    display: flex;
-    justify-content: center;
-}

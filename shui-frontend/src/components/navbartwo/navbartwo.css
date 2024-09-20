@@ -1,0 +1,40 @@
+.nav-wrapperTwo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background: linear-gradient(to right, #a18cd1, #fbc2eb);
+    align-items: center;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    width: 375px;
+}
+
+.nav-wrapper p {
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    width: 100%;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+/* width: 5rem;
+background: linear-gradient(to right, #a18cd1, #fbc2eb);
+border: none;
+color: white;
+padding: 5px 5px;
+font-size: 16px;
+font-weight: bold;
+border-radius: 30px;
+cursor: pointer;
+align-items: center;
+justify-content: space-between;
+transition: all 0.3s ease-in-out;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
