@@ -1,12 +1,10 @@
-import './navbarone.css';
-import { Link } from 'react-router-dom';
+import './navbarone.css'
 
-function NavBarOne() {
+
+function NavBarOne({ sendPublish }) {
   return (
     <nav className='nav-wrapper'>
-      <Link className='All-posts' to='/Writemsg'>
-        <p>Skriv nytt inlägg</p>
-      </Link>
+      <p className='all-posts' onClick={sendPublish}>Publicera nytt inlägg</p>
     </nav>
   );
 }
