@@ -6,11 +6,12 @@ import NavBarOne from '../../components/navbarone/NavBarOne';
 
 function Writemsg() {
   const navigate = useNavigate();
-  const { id } = useParams(); // Hämta post-ID från URL:en
+  const { id } = useParams();
   const [newInlagg, setNewInlagg] = useState('');
   const [newAlias, setNewAlias] = useState('');
 
-  // Hämta befintlig post om det finns ett ID
+  // GET
+
   useEffect(() => {
     if (id) {
       const fetchPost = async () => {
@@ -25,6 +26,8 @@ function Writemsg() {
       fetchPost();
     }
   }, [id]);
+
+  //POST
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -44,7 +47,8 @@ function Writemsg() {
     }
   };
 
-  // Ny funktion för att uppdatera en befintlig post
+  //PUT
+
   const handleUpdatePost = async () => {
     try {
       const response = await axios.put(`https://g7jux13pha.execute-api.eu-north-1.amazonaws.com/posts/${id}`, {
