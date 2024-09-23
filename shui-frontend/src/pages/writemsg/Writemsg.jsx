@@ -10,23 +10,6 @@ function Writemsg() {
   const [newInlagg, setNewInlagg] = useState('');
   const [newAlias, setNewAlias] = useState('');
 
-  // GET
-
-  useEffect(() => {
-    if (id) {
-      const fetchPost = async () => {
-        try {
-          const response = await axios.get(`https://g7jux13pha.execute-api.eu-north-1.amazonaws.com/posts/${id}`);
-          setNewAlias(response.data.alias);
-          setNewInlagg(response.data.inlagg);
-        } catch (error) {
-          console.log('Kunde inte hämta posten', error);
-        }
-      };
-      fetchPost();
-    }
-  }, [id]);
-
   //POST
 
   const handleFormSubmit = async (e) => {
@@ -47,11 +30,28 @@ function Writemsg() {
     }
   };
 
+    // GET
+
+    useEffect(() => {
+      if (id) {
+        const fetchPost = async () => {
+          try {
+            const response = await axios.get(`https://g7jux13pha.execute-api.eu-north-1.amazonaws.com/posts/${id}`);
+            setNewAlias(response.data.alias);
+            setNewInlagg(response.data.inlagg);
+          } catch (error) {
+            console.log('Kunde inte hämta posten', error);
+          }
+        };
+        fetchPost();
+      }
+    }, [id]);
+
   //PUT
 
   const handleUpdatePost = async () => {
     try {
-      const response = await axios.put(`https://g7jux13pha.execute-api.eu-north-1.amazonaws.com/posts/${id}`, {
+      const response = await axios.put(`https://g7jux13pha.execute-api.eu-north-1.amazonaws.com/post/change/${id}`, {
         alias: newAlias,
         inlagg: newInlagg,
       });
