@@ -31,6 +31,10 @@ function Flow() {
       .catch(error => console.error('Något gick fel vid radering:', error));
   }
 
+  const handleEdit = (postid) => {
+    navigate(`/Writemsg/${postid}`);
+  };
+
   return (
     <div className='container-wrapper'>
       {inlagg.length === 0 ? (
@@ -38,7 +42,7 @@ function Flow() {
       ) : (
         inlagg.map((post) => (
           <section className='box-one' key={post.id}>
-            <article className='box-update'><ChangeBtn  onClick={() => handleEdit(post.id, post.alias, post.inlagg)} /> 
+            <article className='box-update'><ChangeBtn postId={post.id} onClick={() => handleEdit(post.id, post.alias, post.inlagg)} /> 
             <span onClick={() => handleDelete(post.id)} className='close'>X</span> </article>
             <p className="time">{post.tid}</p>
             <p className="content">{post.inlagg}</p>

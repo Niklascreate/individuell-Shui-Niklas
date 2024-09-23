@@ -1,11 +1,11 @@
 import './changebtn.css';
 import { useNavigate } from 'react-router-dom';
 
-function ChangeBtn() {
+function ChangeBtn({ postId }) {
   const navigate = useNavigate();
 
   function handleClick() {
-    navigate('/writemsg');
+    navigate(`/writemsg/${postId}`);
   }
 
   return (
