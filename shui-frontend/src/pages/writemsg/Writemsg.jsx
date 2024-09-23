@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import axios from 'axios';
 import './Writemsg.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom'; // Lägg till useParams här
 import NavBarOne from '../../components/navbarone/NavBarOne';
-// import ReturnBtn from '../../components/returnbtn/ReturnBtn';
 
 function Writemsg() {
+  const navigate = useNavigate();
+  const { id } = useParams(); // Korrigera syntaxen här
   const [newInlagg, setNewInlagg] = useState('');
   const [newAlias, setNewAlias] = useState('');
-  const navigate = useNavigate();
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -17,16 +17,21 @@ function Writemsg() {
         alias: newAlias,
         inlagg: newInlagg
       });
-      console.log('svar från server:', response.data)
+      console.log('svar från server:', response.data);
       navigate('/Flow');
     } catch (error) {
-      console.log('Något gick fel'. error)
+      console.log('Något gick fel', error);
     }
-  }
+  };
+
+  const handlePost = async (e) => {
+    e.preventDefault();
+    
+  };
 
   return (
     <section className="container-wrapper">
-      <form className='form-box' onSubmit={handleFormSubmit}>
+      <form className='form-box' onSubmit={id ? handlePost : handleFormSubmit}>
         <label className='label-boxOne'>
           <input
             className='input-alias'
@@ -42,12 +47,10 @@ function Writemsg() {
           value={newInlagg}
           onChange={(e) => setNewInlagg(e.target.value)}
         />
-        {/* <article className='returnBtn-box'>
-        <ReturnBtn />
-        </article> */}
       </form>
-      <NavBarOne sendPublish={handleFormSubmit} />
+      <NavBarOne sendPublish={id ? handlePost : handleFormSubmit} />
     </section>
   );
 }
+
 export default Writemsg;
