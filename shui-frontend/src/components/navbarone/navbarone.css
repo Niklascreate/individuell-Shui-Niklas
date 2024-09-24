@@ -9,6 +9,7 @@
     bottom: 0;
     width: 375px;
     cursor: pointer;
+    letter-spacing: 0.1rem;
 }
 
 .all-posts {

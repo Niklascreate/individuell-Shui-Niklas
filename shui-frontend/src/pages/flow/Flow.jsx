@@ -8,6 +8,7 @@ import DropDown from '../../components/dropdown/DropDown'
 function Flow() {
   const [inlagg, setInlagg] = useState([]);
 
+
   useEffect(() => {
     const fetchInlagg = async () => {
       try {
@@ -42,9 +43,9 @@ function Flow() {
       if (sortKey === 'alias') {
         return a.alias.localeCompare(b.alias);
       } else if (sortKey === 'tid-nyast') {
-        return new Date(b.createdAt) - new Date(a.createdAt); // Nyast till äldst
+        return new Date(b.createdAt) - new Date(a.createdAt);
       } else if (sortKey === 'tid-aldst') {
-        return new Date(a.createdAt) - new Date(b.createdAt); // Äldst till nyast
+        return new Date(a.createdAt) - new Date(b.createdAt);
       }
     });
     setInlagg(sortedInlagg);
@@ -62,9 +63,9 @@ function Flow() {
             <span onClick={() => handleDelete(post.id)} className='close'>X</span> </article>
             <p className="time">{post.tid}</p>
             <p className="content">{post.inlagg}</p>
-            <p className="alias">{post.alias}</p>
+            <p className="alias">/ {post.alias}</p>
           </section>
-        ))
+        )) 
       )}
       <DropDown onSortChange={handleSort} />
       <NavBarTwo />

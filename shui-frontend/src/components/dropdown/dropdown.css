@@ -1,21 +1,26 @@
 .dropdown-btn {
-  margin-bottom: 8rem;
+  margin-top: 3rem;  /* Justera avståndet ovanför dropdown-knappen */
+  margin-bottom: 8rem; /* Behåll avståndet nedanför */
 }
 
 select {
-    padding: 8px 16px;
-    border: 2px solid #007BFF;
+    text-align: center;
+    border: 2px solid transparent;  /* Ta bort den blå standardfärgen */
     border-radius: 4px;
-    background-color: white;
+    background: linear-gradient(to right, #a18cd1, #fbc2eb); /* Gradientbakgrund */
+    color: black;                  /* Ändra textfärgen till svart för bättre kontrast */
     cursor: pointer;
-    font-size: 16px;
-  }
-  
-  select:hover {
-    border-color: #0056b3;
-  }
-  
-  select:focus {
+    font-size: 12px;
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Mjuk övergång */
+}
+
+select:hover {
+    background: linear-gradient(to right, #9d7bc8, #f7bce8);  /* Lite mörkare vid hover */
+    border-color: #a18cd1;          /* Gör kantfärgen lite tydligare på hover */
+}
+
+select:focus {
     outline: none;
-    border-color: #004080;
-  }
+    background: linear-gradient(to right, #8d6fb8, #e0a9d3);  /* Ändra färg när man klickar på dropdown */
+    border-color: #7e61a9;          /* Ändra kantfärgen vid fokus */
+}
