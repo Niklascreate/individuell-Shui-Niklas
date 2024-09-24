@@ -1,0 +1,40 @@
+.nav-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background: linear-gradient(to right, #a18cd1, #fbc2eb);
+    align-items: center;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    width: 375px;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+}
+
+.all-posts {
+    width: 100%;
+    display: flex;
+}
+
+.nav-wrapper p {
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    width: 100%;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+p {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}

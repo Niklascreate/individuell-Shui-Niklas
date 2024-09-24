@@ -1,16 +1,23 @@
-import Flow from "../../shui-frontend/src/pages/flow/Flow.jsx";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Flow from '../../shui-frontend/src/pages/flow/Flow.jsx'
+import Writemsg from './pages/writemsg/Writemsg.jsx';
 import "./App.css";
-import Writemsg from "./pages/writemsg/Writemsg.jsx";
+import Header from './components/header/Header.jsx';
 
 
 function App() {
-
-
   return (
-    <div className="container">
-      <Flow />
-      <Writemsg />
-    </div>
+    <Router>
+      <Header />
+      <div className='app'>
+      <Routes>
+        <Route path="/" element={<Flow />} />
+        <Route path="/Flow" element={<Flow />} />
+        <Route path="/Writemsg/" element={<Writemsg />} />
+        <Route path="/Writemsg/:id" element={<Writemsg />} />
+      </Routes>
+      </div>
+    </Router>
   );
 }
 

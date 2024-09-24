@@ -7,7 +7,7 @@ exports.handler = async (event) => {
         const data = JSON.parse(event.body);
 
         if (!data.alias && !data.inlagg) {
-            return sendError(400, { message: 'Ange Alias och inlägg tack.' });
+            return sendError(400, { message: 'Ange antingen Alias eller inlägg tack.' });
         }
 
         const findInlagg = await db.get({
