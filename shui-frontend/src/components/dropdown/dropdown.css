@@ -1,0 +1,21 @@
+.dropdown-btn {
+  margin-bottom: 8rem;
+}
+
+select {
+    padding: 8px 16px;
+    border: 2px solid #007BFF;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  select:hover {
+    border-color: #0056b3;
+  }
+  
+  select:focus {
+    outline: none;
+    border-color: #004080;
+  }

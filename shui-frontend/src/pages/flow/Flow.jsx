@@ -3,6 +3,7 @@ import axios from 'axios';
 import './flow.css';
 import NavBarTwo from '../../components/navbartwo/NavBarTwo';
 import ChangeBtn from '../../components/changebtn/ChangeBtn';
+import DropDown from '../../components/dropdown/DropDown'
 
 function Flow() {
   const [inlagg, setInlagg] = useState([]);
@@ -35,6 +36,21 @@ function Flow() {
     navigate(`/Writemsg/${postid}`);
   };
 
+ 
+  function handleSort(sortKey) {
+    const sortedInlagg = [...inlagg].sort((a, b) => {
+      if (sortKey === 'alias') {
+        return a.alias.localeCompare(b.alias);
+      } else if (sortKey === 'tid-nyast') {
+        return new Date(b.createdAt) - new Date(a.createdAt); // Nyast till äldst
+      } else if (sortKey === 'tid-aldst') {
+        return new Date(a.createdAt) - new Date(b.createdAt); // Äldst till nyast
+      }
+    });
+    setInlagg(sortedInlagg);
+}
+
+
   return (
     <div className='container-wrapper'>
       {inlagg.length === 0 ? (
@@ -50,6 +66,7 @@ function Flow() {
           </section>
         ))
       )}
+      <DropDown onSortChange={handleSort} />
       <NavBarTwo />
     </div>
   );

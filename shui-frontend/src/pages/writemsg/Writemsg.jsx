@@ -85,5 +85,4 @@ function Writemsg() {
     </section>
   );
 }
-
 export default Writemsg;

@@ -3,6 +3,7 @@
     flex-direction: column;
     gap: 20px;
     padding: 20px;
+    height: auto;
 }
 
 .box-one {
@@ -46,6 +47,11 @@
     font-size: 1.2rem;
     margin: 10px 0;
     color: #010101;
+    transition: 0.4s ease-in-out;
+}
+
+.content:hover {
+    transform: scale(1.1);
 }
 
 .alias {
@@ -77,5 +83,4 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    
 }
