@@ -67,7 +67,6 @@ function Flow() {
           </section>
         )) 
       )}
-      <DropDown onSortChange={handleSort} />
       <NavBarTwo />
     </div>
   );

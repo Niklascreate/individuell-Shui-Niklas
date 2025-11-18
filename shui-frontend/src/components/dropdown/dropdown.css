@@ -16,7 +16,7 @@ select {
 
 select:hover {
     background: linear-gradient(to right, #9d7bc8, #f7bce8);
-    border-color: #a18cd1; 
+    border-color: #a18cd1;
 }
 
 select:focus {
