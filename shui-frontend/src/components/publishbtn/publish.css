@@ -1,0 +1,15 @@
+.publish-btn {
+    width: 5rem;
+    background: linear-gradient(to right, #a18cd1, #fbc2eb);
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
